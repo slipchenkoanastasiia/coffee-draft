@@ -1,0 +1,16 @@
+{
+  "name": "coffee-draft",
+  "version": "1.0.0",
+  "description": "cafe website dev",
+  "scripts": {
+    "start": "parcel docs/index.html",
+    "build": "parcel build docs/index.html"
+  },
+  "keywords": ["coffee", "draft", "website"],
+  "author": "Твоє ім’я",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.1"
+  }
+}
+
