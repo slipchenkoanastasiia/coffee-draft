@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rightText = document.querySelector(".right-text");
   const cup = document.querySelector(".coffee-cup");
   const steam = document.querySelector(".steam");
+  const header = document.querySelector(".header");
 
   const tl = gsap.timeline();
 
@@ -44,5 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       opacity: 1,
       y: 0,
       ease: "power2.out",
+    })
+ 
+    .to(header, {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      onStart: () => header.classList.remove("hidden"),
+      ease: "power2.out"
     });
 });
