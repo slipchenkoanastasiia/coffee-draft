@@ -5,6 +5,64 @@
   padding: 0;
 }
 
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --rapture-light: #FAF9F6;
+  --brunneous: #5E4662;
+  --dark-veil: #141311;
+  --wooden-cabin: #765A3F;
+}
+
+body.cursor-hidden {
+  cursor: none; 
+}
+
+main {
+  flex-grow: 1;
+}
+  
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+  
+a {
+  text-decoration: none; 
+  outline: none; 
+  border: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.link {
+  text-decoration: none; 
+}
+  
+.link a {
+  display: inline-block; 
+}
+  
+.link a:focus, .link a:hover {
+  outline: none; 
+  color: inherit; 
+}
+  
+img {
+  display: block; 
+}
+  
+.icon {
+  fill: currentColor; 
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -23,12 +81,12 @@
   pointer-events: none;
 }
 
-body, html {
-  font-family: 'Helvetica Neue', sans-serif;
-  background: #f5f3f0;
-  color: #2e2e2e;
-  height: 100%;
-  overflow: hidden;
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--rapture-light);
 }
 
 header.header {
@@ -88,7 +146,6 @@ header.header {
   pointer-events: auto; 
 }
 
-
 .hero-row {
   display: flex;
   align-items: center;
@@ -97,16 +154,19 @@ header.header {
 }
 
 .hero-text {
-  font-size: 2.2rem;
+  font-family: var(--font-playfair);
   font-weight: 600;
   opacity: 0;
-  transform: translateY(0); /* додано */
+  transform: translateY(0); 
   transition: opacity 0.3s;
-  line-height: 1.2; /* контроль висоти */
+  line-height: 1.2; 
 }
 
-
 .intro-text {
+  font-size: 48px;
+  letter-spacing: 0.5px; 
+  line-height: 1.2;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -114,25 +174,32 @@ header.header {
   opacity: 0;
 }
 
-
 .left-text, .right-text {
   opacity: 0;
   transform: translateY(20px);
+  font-size: 36px;
+  letter-spacing: 0.5px; 
+  line-height: 1.2;
 }
-
 
 .coffee-scene {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
 }
 
 .coffee-cup {
-  width: 180px;
-  opacity: 0; 
-  filter: blur(4px); 
+  width: 280px;
+  opacity: 0;
+  filter: blur(4px);
   transition: transform 0.3s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  cursor: pointer;
+  will-change: transform, opacity;
 }
 
 .steam {
@@ -145,6 +212,7 @@ header.header {
   animation: float 3s infinite ease-in-out;
   z-index: -1;
 }
+
 
 
 @keyframes float {
