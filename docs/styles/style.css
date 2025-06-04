@@ -84,7 +84,6 @@ header.header {
   align-items: center;
   justify-content: center;
   width: 100%;
-
   text-align: center;
   pointer-events: auto; 
 }
@@ -101,12 +100,20 @@ header.header {
   font-size: 2.2rem;
   font-weight: 600;
   opacity: 0;
+  transform: translateY(0); /* додано */
   transition: opacity 0.3s;
+  line-height: 1.2; /* контроль висоти */
 }
 
+
 .intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
 }
+
 
 .left-text, .right-text {
   opacity: 0;
@@ -123,12 +130,9 @@ header.header {
 
 .coffee-cup {
   width: 180px;
-  transform: scale(0);
+  opacity: 0; 
+  filter: blur(4px); 
   transition: transform 0.3s;
-}
-
-.coffee-cup:hover {
-  transform: scale(1.05) rotate(-2deg);
 }
 
 .steam {
@@ -142,9 +146,6 @@ header.header {
   z-index: -1;
 }
 
-.hidden {
-  display: none;
-}
 
 @keyframes float {
   0% { transform: translateY(0px); opacity: 0.4; }

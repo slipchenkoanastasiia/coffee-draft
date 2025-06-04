@@ -17,36 +17,39 @@ document.addEventListener("DOMContentLoaded", () => {
     y: -10,
     ease: "power2.out",
   })
-    .to(introText, {
-      duration: 1,
-      opacity: 0,
-      delay: 2,
-    })
+.to(introText, {
+  duration: 1.2,
+  opacity: 0,
+  y: 15,
+  delay: 0.5,
+  ease: "back.in(2)",  
+})
+
     .add(() => {
       heroRow.classList.remove("hidden");
     })
     .to(cup, {
       duration: 1,
-      scale: 1,
-      ease: "back.out(1.7)",
+      opacity: 1,
+      filter: "blur(0px)",
+      ease: "power2.out",
     })
     .to(steam, {
       duration: 1.5,
       opacity: 1,
-    }, "-=0.5")
+    }, "-=1.5")
     .to(leftText, {
-      duration: 1,
+      duration: 0.5,
       opacity: 1,
       y: 0,
       ease: "power2.out",
     })
     .to(rightText, {
-      duration: 1,
+      duration: 0.5,
       opacity: 1,
       y: 0,
       ease: "power2.out",
     })
- 
     .to(header, {
       duration: 1,
       opacity: 1,
