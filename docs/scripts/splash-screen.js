@@ -18,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroRow) {
         setTimeout(() => heroRow.classList.remove('hidden'), 500);
       }
-    }, 3000);
+    }, 2000);
   });

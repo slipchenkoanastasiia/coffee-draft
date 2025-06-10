@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     splashScreen.classList.add("hidden");
-
     runIntroAnimation();
   }, 2000);
 
@@ -16,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rightText = document.querySelector(".right-text");
     const cup = document.querySelector(".coffee-cup");
     const header = document.querySelector(".header");
+    const wrapper = document.querySelector(".cup-wrapper");
 
     const tl = gsap.timeline();
 
@@ -61,28 +61,51 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out"
     });
 
-    cup.style.cursor = "pointer";
+    // === Інтерактивне обертання чашки ===
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    cup.addEventListener("mousemove", (e) => {
-      const rect = cup.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const relativeX = e.clientX - centerX;
-      const normalizedX = relativeX / (rect.width / 2);
-      const targetRotateY = normalizedX * 180;
+    if (isMobile && window.DeviceOrientationEvent) {
+      window.addEventListener("deviceorientation", (event) => {
+        const { beta, gamma } = event;
 
-      gsap.to(cup, {
-        rotateY: targetRotateY,
-        duration: 0.3,
-        ease: "power2.out",
+        const rotateX = Math.max(Math.min(beta - 90, 30), -30);
+        const rotateY = Math.max(Math.min(gamma, 30), -30);
+
+        gsap.to(cup, {
+          rotateX: -rotateX,
+          rotateY: rotateY,
+          duration: 0.3,
+          ease: "power2.out"
+        });
       });
-    });
+    } else {
+      wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
 
-    cup.addEventListener("mouseleave", () => {
-      gsap.to(cup, {
-        rotateY: 0,
-        duration: 0.6,
-        ease: "power2.out",
+        const percentX = (offsetX / rect.width - 0.5) * 2;
+        const percentY = (offsetY / rect.height - 0.5) * 2;
+
+        const rotateY = percentX * 30;
+        const rotateX = -percentY * 30;
+
+        gsap.to(cup, {
+          rotateX: rotateX,
+          rotateY: rotateY,
+          duration: 0.3,
+          ease: "power2.out"
+        });
       });
-    });
+
+      wrapper.addEventListener("mouseleave", () => {
+        gsap.to(cup, {
+          rotateX: 0,
+          rotateY: 0,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      });
+    }
   }
 });
