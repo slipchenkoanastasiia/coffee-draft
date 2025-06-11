@@ -46,8 +46,72 @@
   </div>
 </section>
 
+<section class="coffee-constructor">
+  <h2>Create Your Coffee</h2>
+  <form id="coffeeForm">
+    <div class="form-group">
+      <h3>1. Choose Your Base</h3>
+      <div class="options">
+        <label><input type="radio" name="base" value="Espresso" checked> Espresso</label>
+        <label><input type="radio" name="base" value="Americano"> Americano</label>
+        <label><input type="radio" name="base" value="Ristretto"> Ristretto</label>
+        <label><input type="radio" name="base" value="Cold Brew"> Cold Brew</label>
+        <label><input type="radio" name="base" value="Hot Water"> Hot Water</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h3>2. Select Milk Type</h3>
+      <select name="milk">
+        <option value="Whole milk">Whole Milk</option>
+        <option value="Skim milk">Skim Milk</option>
+        <option value="Oat milk">Oat Milk</option>
+        <option value="Almond milk">Almond Milk</option>
+        <option value="Soy milk">Soy Milk</option>
+        <option value="Coconut milk">Coconut Milk</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <h3>3. Add Syrups</h3>
+      <label><input type="checkbox" name="syrup" value="Vanilla"> Vanilla</label>
+      <label><input type="checkbox" name="syrup" value="Caramel"> Caramel</label>
+      <label><input type="checkbox" name="syrup" value="Hazelnut"> Hazelnut</label>
+      <label><input type="checkbox" name="syrup" value="Cardamom"> Cardamom</label>
+      <label><input type="checkbox" name="syrup" value="Date syrup"> Date Syrup</label>
+    </div>
+
+    <div class="form-group">
+      <h3>4. Strength</h3>
+      <input type="range" name="strength" min="1" max="3" value="2">
+    </div>
+
+    <div class="form-group">
+      <h3>5. Cup Size</h3>
+      <label><input type="radio" name="size" value="Small" checked> Small</label>
+      <label><input type="radio" name="size" value="Medium"> Medium</label>
+      <label><input type="radio" name="size" value="Large"> Large</label>
+    </div>
+
+    <div class="form-group">
+      <h3>6. Extras</h3>
+      <label><input type="checkbox" name="extra" value="Whipped Cream"> Whipped Cream</label>
+      <label><input type="checkbox" name="extra" value="Cinnamon"> Cinnamon</label>
+      <label><input type="checkbox" name="extra" value="Decaf"> Decaf</label>
+    </div>
+
+    <div class="form-group total">
+      <strong>Total Price: <span id="price" class="animated">0.00</span> AED</strong>
+    </div>
+
+    <button type="submit">Add to Order</button>
+  </form>
+</section>
+
+
    <script type="module" src="./scripts/main.js"></script> 
    <script src="./scripts/splash-screen.js"></script>
+    <script src="./scripts/coffee-const.js"></script>
 
 </body>
 </html>
