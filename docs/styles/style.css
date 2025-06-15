@@ -89,48 +89,104 @@ body {
   background-color: var(--rapture-light);
 }
 
+/* --- Хедер --- */
+
 header.header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 26px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff8f3;
+  background: var(--rapture-light);
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: none;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #6b4e3d;
+.burger {
+  display: none; 
+  margin-left: 20px;
+  font-size: 22px;
+  color: var(--brunneous);
+  cursor: pointer;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 38px;
+  height: auto;
+}
+
+.logo-text {
+font-family: var(--font-playfair);
+font-size: 18px;
+font-weight: 600;
+line-height: 1.5; 
+letter-spacing: 0.2px;
 }
 
 .nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-list {
   display: flex;
   list-style: none;
   gap: 20px;
+  background-color: #58453b;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .nav-list li a {
   text-decoration: none;
-  color: #2e2e2e;
+  color: var(--rapture-light);
   font-family: var(--font-inter);
   font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5; 
+  letter-spacing: 0.2px;
 }
 
-.burger {
-  display: none;
-  font-size: 1.8rem;
+.craft-btn {
+  background-color: var(--wooden-cabin);
+  color: #FAF9F6;
+  border: 1px solid var(--wooden-cabin);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: var(--font-inter, sans-serif);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5; 
+  letter-spacing: 0.2px;
   cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sign-in {
+  text-decoration: none;
+  color: var(--wooden-cabin);
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5; 
+  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .hero {
@@ -216,7 +272,7 @@ header.header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: var(--wooden-cabin);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -228,6 +284,14 @@ header.header {
   transition: opacity 1.8s ease, visibility 1.8s ease;
 }
 
+.splash-pattern-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 #splash-screen.hidden {
   opacity: 0;
   visibility: hidden;
@@ -235,9 +299,8 @@ header.header {
 }
 
 .splash-pattern {
-  width: 120px;
+  width: 160px;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .splash-phone {
