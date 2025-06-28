@@ -233,9 +233,20 @@ letter-spacing: 0.2px;
 .left-text, .right-text {
   opacity: 0;
   transform: translateY(20px);
-  font-size: 36px;
-  letter-spacing: 0.5px; 
+  font-size: 28px;
+  letter-spacing: 0.5px;
   line-height: 1.2;
+  min-width: 150px;   
+}
+
+.left-text {
+  margin-right: 40px;
+  text-align: left;
+}
+
+.right-text {
+  margin-left: 40px;
+  text-align: right;
 }
 
 .coffee-scene {
@@ -248,9 +259,9 @@ letter-spacing: 0.2px;
 
 .cup-wrapper {
   perspective: 1000px;
-  width: 280px;
-  margin: 0 auto;
-  touch-action: none; 
+  width: 480px;
+  margin: 80px auto 0 auto; 
+  touch-action: none;
 }
 
 .coffee-cup {
@@ -262,9 +273,7 @@ letter-spacing: 0.2px;
   transition: transform 0.3s, opacity 0.3s, filter 0.3s;
   will-change: transform, opacity;
   cursor: pointer;
-}
-
-
+} 
 
 #splash-screen {
   position: fixed;
@@ -324,214 +333,136 @@ letter-spacing: 0.2px;
   color: #000;
 }
 
- /* Конструктор кави */
 
-.coffee-constructor {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 24px;
-  border-radius: 20px;
-  background: #fefefe;
-  font-family: 'Helvetica Neue', sans-serif;
-  box-shadow: 0 0 20px rgba(0,0,0,0.08);
-  animation: fadeIn 0.8s ease-out;
-  position: relative;
-  display: flex;
-  gap: 40px;
-  flex-wrap: nowrap;
-}
-
-.constructor-body {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.coffee-constructor h2 {
+ /* Секція вибору карток */
+.choose-taste {
+  padding: 60px 20px;
+  background-color: var(--dark-veil);
+  color: var(--rapture-light);
   text-align: center;
-  margin-bottom: 30px;
-  color: #5e3d2c;
 }
 
-.form-group {
-  display: grid;
-  grid-template-columns: 1fr;
+.choose-taste-title {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 48px;
   margin-bottom: 40px;
-  position: relative;
 }
 
-.coffee-constructor .form-group:nth-child(odd) {
-  transform: translateX(-30px);
+.choose-taste-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.coffee-constructor .form-group:nth-child(even) {
-  transform: translateX(30px);
-}
-
-.form-group h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #7a5236;
-}
-
-.options label,
-.form-group label {
-  display: block;
-  margin: 5px 0;
-  cursor: pointer;
-  color: #333;
-}
-
-input[type="range"] {
-  width: 100%;
-}
-
-select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.total {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 30px;
-  color: #2f2f2f;
-}
-
-#price {
-  font-weight: bold;
-  color: #a0522d;
-  display: inline-block;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-#price.bump {
-  transform: scale(1.2);
-  color: #d2691e;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  background: #5e3d2c;
-  color: white;
-  font-size: 16px;
+.taste-card {
+  background-color: var(--brunneous);
   border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #7b5135;
-}
-
-#coffeeForm {
-  flex: 1;
-  min-width: 300px;
-}
-
-.coffee-preview {
-  flex: 1 1 280px;
-  order: -1;  
+  width: 280px;
+  padding: 20px;
+  position: relative;
+  color: var(--rapture-light);
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-#coffeeForm {
-  flex: 1 1 300px;
-}
-
-/* Замість попередніх стилів для .cup зробимо ширше і вище, під SVG */
-.cup {
-  width: 300px;      /* більший розмір для кращої деталізації */
-  height: 420px;
-  position: relative;
-  overflow: visible; /* щоб хвилі за межами не обрізались */
-}
-
-/* Виділення контуру чашки (опціонально, можна підсвітити SVG) */
-.cup-glass {
-  fill: url(#glassGradient);
-  stroke: #a3775d;
-  stroke-width: 4px;
-  filter: url(#glassBlur);
-}
-
-/* Прозорі "блиски" */
-.highlight {
-  fill: white;
-  opacity: 0.25;
-  filter: blur(3px);
-}
-
-/* Стилі хвиль */
-.wave {
-  fill: #d2691e;  /* колір кави */
-  opacity: 0.8;
-  animation: waveMove 4s infinite linear;
-  transform-origin: center bottom;
-}
-
-.wave2 {
-  animation-delay: 1.2s;
-  opacity: 0.6;
-}
-
-.wave3 {
-  animation-delay: 2.4s;
-  opacity: 0.4;
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(20px); }
-}
-
-/* Залишаємо стилі для .layers і .layer, якщо використовуєте для інших цілей */
-
-.layers {
-  position: absolute;
-  bottom: 0;
+/* Верхня частина: назва зліва, сердечко справа */
+.taste-card-header {
   width: 100%;
   display: flex;
-  flex-direction: column-reverse;
-  overflow: hidden; /* приховує виступаючі хвилі */
-  border-radius: 20px; /* для більш «скляного» вигляду */
-  box-shadow: inset 0 0 15px rgba(255,255,255,0.3); /* світловий блиск */
-  background: rgba(255, 255, 255, 0.1); /* легка прозорість фону */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
-.layer {
+.taste-card-name {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: left;
+}
+
+.taste-card-favorite {
+  background: none;
+  border: none;
+  color: var(--rapture-light);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.taste-card-favorite:hover {
+  color: #f44336; /* червоний при наведенні */
+}
+
+/* Зображення посередині */
+.taste-card-image img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Розміри чашок */
+.taste-card-sizes {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Додатки під розмірами */
+.taste-card-addons {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* Нижня частина: ціна і кружок з галочкою */
+.taste-card-footer {
   width: 100%;
-  /* висота тепер задається JS */
-  transition: height 0.5s ease, background-color 0.3s ease;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  border-radius: 15px 15px 5px 5px;
-  opacity: 0.85;
-  box-shadow: inset 0 3px 8px rgba(0,0,0,0.15);
-  animation: waveFloat 3s ease-in-out infinite;
-  /* Додати плавний рух хвиль */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-/* Ключові кадри для хвильової анімації */
-@keyframes waveFloat {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+.taste-card-price {
+  background-color: var(--rapture-light);
+  color: var(--dark-veil);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
+/* Кнопка з галочкою */
+.taste-card-check {
+  background-color: var(--brunneous);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 
-.preview-price {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #5e3d2c;
+ 
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  transition: background-color 0.3s;
+}
+
+.taste-card-check:hover {
+  background-color: #3a2b23;
+}
+
+.taste-card-check svg {
+  stroke: #fff;
 }

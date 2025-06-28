@@ -57,133 +57,113 @@
   </div>
 </section>
 
-<section class="coffee-constructor">
-  <h2>Create Your Coffee</h2>
-  <div class="constructor-body"></div>
-  <form id="coffeeForm">
+<section class="choose-taste">
+  <h2 class="choose-taste-title">Choose Your Taste</h2>
+  <div class="choose-taste-cards">
     
-    <!-- Base -->
-    <div class="form-group">
-      <h3>1. Choose Your Base</h3>
-      <div class="options">
-        <label><input type="radio" name="base" value="Espresso" checked> Espresso</label>
-        <label><input type="radio" name="base" value="Americano"> Americano</label>
-        <label><input type="radio" name="base" value="Ristretto"> Ristretto</label>
-        <label><input type="radio" name="base" value="Cold Brew"> Cold Brew</label>
-        <label><input type="radio" name="base" value="Hot Water"> Hot Water</label>
+    <div class="taste-card">
+      <div class="taste-card-header">
+        <div class="taste-card-name">Espresso</div>
+        <button class="taste-card-favorite" aria-label="Add to favorites">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="taste-card-image">
+        <img src="#" alt="Espresso coffee" />
+      </div>
+      <div class="taste-card-sizes">S / M / L</div>
+      <div class="taste-card-addons">Milk / Syrop / Decaf</div>
+      <div class="taste-card-footer">
+        <div class="taste-card-price">$3.50</div>
+        <button class="taste-card-check" aria-label="Select Espresso">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <!-- Milk -->
-    <div class="form-group">
-      <h3>2. Select Milk Type</h3>
-      <select name="milk">
-        <option value="Whole milk">Whole Milk</option>
-        <option value="Skim milk">Skim Milk</option>
-        <option value="Oat milk">Oat Milk</option>
-        <option value="Almond milk">Almond Milk</option>
-        <option value="Soy milk">Soy Milk</option>
-        <option value="Coconut milk">Coconut Milk</option>
-      </select>
+    <div class="taste-card">
+      <div class="taste-card-header">
+        <div class="taste-card-name">Cappuccino</div>
+        <button class="taste-card-favorite" aria-label="Add to favorites">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="taste-card-image">
+        <img src="#" alt="Cappuccino coffee" />
+      </div>
+      <div class="taste-card-sizes">S / M / L</div>
+      <div class="taste-card-addons">Milk / Syrop / Decaf</div>
+      <div class="taste-card-footer">
+        <div class="taste-card-price">$4.00</div>
+        <button class="taste-card-check" aria-label="Select Cappuccino">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Syrups -->
-    <div class="form-group">
-      <h3>3. Add Syrups</h3>
-      <label><input type="checkbox" name="syrups[]" value="Vanilla"> Vanilla</label>
-      <label><input type="checkbox" name="syrups[]" value="Caramel"> Caramel</label>
-      <label><input type="checkbox" name="syrups[]" value="Hazelnut"> Hazelnut</label>
-      <label><input type="checkbox" name="syrups[]" value="Cardamom"> Cardamom</label>
-      <label><input type="checkbox" name="syrups[]" value="Date syrup"> Date Syrup</label>
+    <div class="taste-card">
+      <div class="taste-card-header">
+        <div class="taste-card-name">Latte</div>
+        <button class="taste-card-favorite" aria-label="Add to favorites">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="taste-card-image">
+        <img src="#" alt="Latte coffee" />
+      </div>
+      <div class="taste-card-sizes">S / M / L</div>
+      <div class="taste-card-addons">Milk / Syrop / Decaf</div>
+      <div class="taste-card-footer">
+        <div class="taste-card-price">$4.50</div>
+        <button class="taste-card-check" aria-label="Select Latte">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Strength -->
-    <div class="form-group">
-      <h3>4. Strength</h3>
-      <input type="range" name="strength" min="1" max="3" value="2">
+    <div class="taste-card">
+      <div class="taste-card-header">
+        <div class="taste-card-name">Mocha</div>
+        <button class="taste-card-favorite" aria-label="Add to favorites">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="taste-card-image">
+        <img src="#" alt="Mocha coffee" />
+      </div>
+      <div class="taste-card-sizes">S / M / L</div>
+      <div class="taste-card-addons">Milk / Syrop / Decaf</div>
+      <div class="taste-card-footer">
+        <div class="taste-card-price">$4.80</div>
+        <button class="taste-card-check" aria-label="Select Mocha">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </button>
+      </div>
     </div>
-
-    <!-- Size -->
-    <div class="form-group">
-      <h3>5. Cup Size</h3>
-      <label><input type="radio" name="size" value="Small" checked> Small</label>
-      <label><input type="radio" name="size" value="Medium"> Medium</label>
-      <label><input type="radio" name="size" value="Large"> Large</label>
-    </div>
-
-    <!-- Extras -->
-    <div class="form-group">
-      <h3>6. Extras</h3>
-      <label><input type="checkbox" name="extras[]" value="Whipped Cream"> Whipped Cream</label>
-      <label><input type="checkbox" name="extras[]" value="Cinnamon"> Cinnamon</label>
-      <label><input type="checkbox" name="extras[]" value="Decaf"> Decaf</label>
-    </div>
-
-    <!-- Total -->
-    <div class="form-group total">
-      <strong>Total Price: <span id="price" class="animated">0.00</span> AED</strong>
-    </div>
-
-    <button type="submit">Add to Order</button>
-  </form>
-
-  <!-- Preview -->
-  <div class="coffee-preview">
-  <h2>Your Coffee</h2>
-  <div class="cup">
-    <!-- SVG скляної чашки з хвилями -->
-    <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-label="Скляна чашка з кавою" style="width: 100%; height: auto;">
-      <defs>
-        <linearGradient id="glassGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
-          <stop offset="40%" stop-color="#d0cfcf" stop-opacity="0.3" />
-          <stop offset="70%" stop-color="#bfbaba" stop-opacity="0.2" />
-          <stop offset="100%" stop-color="#f8f7f7" stop-opacity="0.7" />
-        </linearGradient>
-
-        <filter id="glassBlur" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-          <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="white" flood-opacity="0.3"/>
-        </filter>
-
-        <clipPath id="cupClip">
-          <path d="M60 10 Q40 180 100 260 Q160 180 140 10 Z" />
-        </clipPath>
-
-        <path id="wavePath" d="
-          M0 20 
-          Q15 10 30 20 
-          T60 20 
-          T90 20
-          T120 20
-          V40 H0 Z
-        " />
-      </defs>
-
-      <path class="cup-glass" d="M60 10 Q40 180 100 260 Q160 180 140 10 Z" />
-
-      <ellipse class="highlight" cx="130" cy="70" rx="25" ry="70" />
-      <ellipse class="highlight" cx="90" cy="230" rx="30" ry="10" />
-
-      <g clip-path="url(#cupClip)">
-        <use href="#wavePath" class="wave wave1" y="190" />
-        <use href="#wavePath" class="wave wave2" y="210" />
-        <use href="#wavePath" class="wave wave3" y="230" />
-      </g>
-    </svg>
-  </div>
-  <div class="preview-price">
-    <strong>Total: <span id="pricePreview">0.00</span> AED</strong>
-  </div>
-</div>
 
   </div>
 </section>
 
 
-
-   <script type="module" src="./scripts/main.js"></script> 
-   <script src="./scripts/splash-screen.js"></script>
-    <script src="./scripts/coffee-const.js"></script>
+  <script type="module" src="./scripts/main.js"></script> 
+  <script src="./scripts/splash-screen.js"></script>
+  <script src="./scripts/coffee-const.js"></script>
 
 </body>
 </html>
