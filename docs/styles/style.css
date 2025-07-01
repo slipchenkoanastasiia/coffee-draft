@@ -337,39 +337,62 @@ letter-spacing: 0.2px;
  /* Секція вибору карток */
 .choose-taste {
   padding: 60px 20px;
-  background-color: var(--dark-veil);
+  background-color: var(--rapture-light);
   color: var(--rapture-light);
   text-align: center;
 }
 
 .choose-taste-title {
-  font-family: var(--font-playfair);
+  font-family: var(--font-inter);
+  color: var(--dark-veil);
   font-weight: 700;
   font-size: 48px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
   margin-bottom: 40px;
 }
 
 .choose-taste-cards {
   display: flex;
   gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+  padding-bottom: 20px;
+}
+
+.choose-taste-cards::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .taste-card {
-  background-color: var(--brunneous);
+  flex: 0 0 calc((100% - 90px) / 4); 
+  background-color: var(--wooden-cabin);
   border-radius: 12px;
-  width: 280px;
   padding: 20px;
-  position: relative;
-  color: var(--rapture-light);
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-align: start;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Верхня частина: назва зліва, сердечко справа */
+.taste-card:hover {
+  transform: scale(1.05);
+}
+
+.choose-taste-cards {
+  cursor: grab;
+}
+
+.choose-taste-cards.active {
+  cursor: grabbing;
+}
+
 .taste-card-header {
   width: 100%;
   display: flex;
@@ -379,8 +402,11 @@ letter-spacing: 0.2px;
 }
 
 .taste-card-name {
+  font-family: var(--font-inter);
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
   text-align: left;
 }
 
@@ -396,31 +422,37 @@ letter-spacing: 0.2px;
   transition: color 0.3s;
 }
 
-.taste-card-favorite:hover {
-  color: #f44336; /* червоний при наведенні */
+.taste-card-favorite:active {
+  color: var(--rapture-light); 
 }
 
-/* Зображення посередині */
 .taste-card-image img {
-  width: 150px;
+  width: 130px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
-/* Розміри чашок */
 .taste-card-sizes {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-/* Додатки під розмірами */
-.taste-card-addons {
+  font-family: var(--font-inter);
+  font-weight: 600;
   font-size: 14px;
-  margin-bottom: 20px;
-  color: #ccc;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  margin-top: 10px;
 }
 
-/* Нижня частина: ціна і кружок з галочкою */
+.taste-card-addons {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--rapture-light);
+}
+
 .taste-card-footer {
   width: 100%;
   display: flex;
@@ -434,35 +466,31 @@ letter-spacing: 0.2px;
   color: var(--dark-veil);
   padding: 6px 14px;
   border-radius: 6px;
+  font-family: var(--font-inter);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  margin-top: 5px;
 }
 
-/* Кнопка з галочкою */
 .taste-card-check {
-  background-color: var(--brunneous);
+  background-color: var(--rapture-light);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
- 
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-
+  bottom: -30px;
+  right: -30px;
   box-shadow: 0 0 8px rgba(0,0,0,0.4);
   transition: background-color 0.3s;
 }
 
-.taste-card-check:hover {
-  background-color: #3a2b23;
-}
-
 .taste-card-check svg {
-  stroke: #fff;
+  stroke: var(--dark-veil);
 }
